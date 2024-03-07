@@ -17,9 +17,7 @@ const displayList=ref(true);
 <!--    <router-link to="/map">Affichage map</router-link>-->
 <!--  </p>-->
 <!--  <router-view></router-view>-->
-
   <div>
-
     <button
         @click="displayList=true">
       LISTE
@@ -29,8 +27,7 @@ const displayList=ref(true);
       MAP
     </button>
   </div>
-  <displayListVue v-if="displayList" ></displayListVue>
-  <displayMapVue v-else ></displayMapVue>
+  <displayListVue v-if="displayList" ></displayListVue>-
 </template>
 
 <style scoped>
