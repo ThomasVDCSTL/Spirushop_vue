@@ -18,7 +18,7 @@ const suppLastRefresh = ref(props.infos.checkedAt)
 </script>
 
 <template>
-  <div v-show="suppAvailable === props.filtre">
+  <div v-show="suppAvailable != props.filtre">
     <h2>{{ suppName }}</h2>
     <p :style="{color:  suppAvailable === 1 ? 'lightgreen': 'red'}">{{ suppAvailable === 1 ? 'Disponible': 'Indisponible'}}</p>
     <p>Date de dernière relevé des stocks : {{ suppLastRefresh }}</p>
