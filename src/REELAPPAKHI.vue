@@ -27,7 +27,8 @@ const displayList=ref(true);
       MAP
     </button>
   </div>
-  <displayListVue v-if="displayList" ></displayListVue>-
+  <displayListVue v-if="displayList" ></displayListVue>
+  <display-map-vue v-else ></display-map-vue>
 </template>
 
 <style scoped>
