@@ -25,8 +25,8 @@ const suppLastRefresh = ref(props.infos.checkedAt)
 div {
   color: white;
   width: 70%;
-  display: flex;
   flex-direction: column;
+  display: flex;
   align-items: center;
   justify-content: center;
   border-bottom :1px solid black;
