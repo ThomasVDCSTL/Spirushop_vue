@@ -2,22 +2,23 @@
 
 import {ref} from "vue";
 
-const aboutPage = ref(false)
 
 </script>
 
 <template>
-<ul>
-  <li class="btnnvbr">
-    <button @click="aboutPage=false">FOURNISSEURS</button>
-  </li>
-  <li>
-    <img src="https://static.wixstatic.com/media/5e2c7c_2f24e75db0f549b1a01b20f296acb165~mv2.png/v1/fill/w_560,h_560,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/5e2c7c_2f24e75db0f549b1a01b20f296acb165~mv2.png" alt="logoSpirulineTahBogotta">
-  </li>
-  <li class="btnnvbr">
-    <button @click="aboutPage=true">A PROPOS</button>
-  </li>
-</ul>
+<div id="header">
+  <ul>
+    <li class="btnnvbr">
+      <button @click="aboutPage=false">FOURNISSEURS</button>
+    </li>
+    <li>
+      <img src="https://static.wixstatic.com/media/5e2c7c_2f24e75db0f549b1a01b20f296acb165~mv2.png/v1/fill/w_560,h_560,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/5e2c7c_2f24e75db0f549b1a01b20f296acb165~mv2.png" alt="logoSpirulineTahBogotta">
+    </li>
+    <li class="btnnvbr">
+      <button @click="aboutPage=true">A PROPOS</button>
+    </li>
+  </ul>
+</div>
 </template>
 
 <style scoped>
@@ -46,8 +47,15 @@ button {
   transition: background-color 0.2s ease, font-size .2s ease ;
 }
 li{
-  width: 33%;
+  width: 33.3%;
   display: flex;
   justify-content: center;
 }
 </style>
+
+<script>
+
+import {ref} from "vue";
+
+export const aboutPage = ref(false)
+</script>
