@@ -27,8 +27,8 @@ div {
   width: 70%;
   flex-direction: column;
   display: flex;
-  align-items: center;
   border-bottom :1px solid black;
+  align-items: center;
   justify-content: center;
   gap: 1rem;
   padding-top: 2rem;
