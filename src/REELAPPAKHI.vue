@@ -1,4 +1,5 @@
 <script setup>
+import { RouterLink, RouterView } from 'vue-router'
 import {ref} from "vue";
 import displayListVue from './cmavue/displayListVue.vue'
 import displayMapVue from './cmavue/displayMapVue.vue'
@@ -12,25 +13,19 @@ const displayList=ref(true);
 <template>
   <img src="https://alovitox.com/wp-content/uploads/2020/06/spirulina.png" alt="Tas De co.. Spiruline !">
   <h1>{{ title }}</h1>
-    <!--  <p>-->
-<!--    <router-link to="/">Affichage liste</router-link>-->
-<!--    <router-link to="/map">Affichage map</router-link>-->
-<!--  </p>-->
-<!--  <router-view></router-view>-->
-
   <div>
-
     <button
         @click="displayList=true">
-      LISTE
+    <router-link to="/">LISTE</router-link>
     </button>
     <button
         @click="displayList=false">
-      MAP
+    <router-link to="/map">MAP</router-link>
     </button>
   </div>
-  <displayListVue v-if="displayList" ></displayListVue>
-  <displayMapVue v-else ></displayMapVue>
+  <router-view></router-view>
+<!--  <displayListVue v-if="displayList" ></displayListVue>-->
+<!--  <display-map-vue v-else ></display-map-vue>-->
 </template>
 
 <style scoped>
@@ -63,6 +58,7 @@ div button {
   border : none;
   background: none;
   transition: background-color 0.2s ease, font-size .2s ease ;
+  display: flex;
 }
 button~button{
   border-left: white solid 0.5px;
@@ -75,5 +71,16 @@ img {
   position: absolute;
   top:80px;
   z-index: -1000;
+}
+a{
+  width: 100%;
+  height:100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+a:hover{
+  background: none;
 }
 </style>

@@ -4,6 +4,10 @@ const props = defineProps({
   infos : {
     type : Object,
     required : true
+  },
+  filtre : {
+    type : Number,
+    required : true
   }
 })
 const suppName = ref(props.infos.name)
@@ -14,7 +18,7 @@ const suppLastRefresh = ref(props.infos.checkedAt)
 </script>
 
 <template>
-  <div>
+  <div v-show="suppAvailable != props.filtre">
     <h2>{{ suppName }}</h2>
     <p :style="{color:  suppAvailable === 1 ? 'lightgreen': 'red'}">{{ suppAvailable === 1 ? 'Disponible': 'Indisponible'}}</p>
     <p>Date de dernière relevé des stocks : {{ suppLastRefresh }}</p>

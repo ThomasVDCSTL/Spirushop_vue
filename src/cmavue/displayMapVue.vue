@@ -1,28 +1,57 @@
-<script setup>
+<script>
+import 'leaflet/dist/leaflet.css'
+import { LIcon, LMap, LMarker, LPopup, LTileLayer, LTooltip } from '@vue-leaflet/vue-leaflet'
+import L from 'leaflet'
+import { supplierList } from '@/DTO.js'
 
-
-
+export default {
+  components: {
+    LTooltip,
+    LPopup,
+    LIcon,
+    LMarker,
+    LMap,
+    LTileLayer
+  },
+  data() {
+    return {
+      zoom: 2,
+      iconSize: 30,
+      iconUrl: 'https://cdn-icons-png.flaticon.com/256/7550/7550755.png',
+      supplierList: supplierList
+    }
+  }
+}
+console.log(L)
 </script>
 
 <template>
-  <div id="map">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d23190308.64154687!2d-6.721302171856046!3d44.80428172062651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sfr!2sfr!4v1709648121795!5m2!1sfr!2sfr" width="800" height="600" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+  <div style="height:600px; width:50vw">
+    <l-map ref="map" v-model:zoom="zoom" :center="[47.41322, -1.219482]">
+      <l-tile-layer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          layer-type="base"
+          name="OpenStreetMap"
+      ></l-tile-layer>
+      <l-marker v-for="supplier in supplierList" :lat-lng="[supplier.latitude, supplier.longitude]" :key="supplier.id">
+        <l-icon :icon-url="iconUrl" :icon-size="iconSize" />
+        <l-popup>
+          {{ supplier.name }}
+        </l-popup>
+        <l-tooltip>
+          {{ supplier.status ? 'A du stock' : 'N\'a pas de stock' }}
+        </l-tooltip>
+      </l-marker>
+    </l-map>
   </div>
 </template>
 
 <style scoped>
 div{
-  margin : 4rem 0;
-  justify-content: center;
-  width: 100%;
+  margin-top: 2rem;
 }
-iframe{
-  transition: all 1s;
-  width: 100vw;
-}
-iframe:hover{
-  transform: rotate(44546464343246546534deg);
-  //transform: scale(-1);
-}
+
+
+
 
 </style>

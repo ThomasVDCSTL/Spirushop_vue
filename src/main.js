@@ -1,8 +1,12 @@
 import './assets/main.css'
 
 import { createApp } from 'vue'
-import REELAPPAKHI from './REELAPPAKHI.vue'
-import header from './cmavue/header.vue'
+import CETTEFOISCESTLAVRAIDEVRAIAPP from "@/CETTEFOISCESTLAVRAIDEVRAIAPP.vue";
+import myRouter from "@/index.js";
 
-createApp( REELAPPAKHI ).mount('#app')
-createApp( header ).mount('#header')
+
+const app=createApp(CETTEFOISCESTLAVRAIDEVRAIAPP)
+
+    app.use(myRouter)
+
+    app.mount('#app')

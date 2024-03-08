@@ -1,7 +1,6 @@
 @import './base.css';
 
 #app {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
@@ -35,13 +34,15 @@ a,
   }
 
   #app {
-    width : 1000px;
+    width : 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 ;
   }
-
+  #app>div:not(div:nth-child(1)){
+    width: 70%;
+  }
 
 }
