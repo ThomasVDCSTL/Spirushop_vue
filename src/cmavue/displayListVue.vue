@@ -48,6 +48,7 @@ select{
   padding: .5rem;
   font-size: 20px;
   border-radius: 5px;
+  cursor: pointer;
 }
 option:nth-child(2){
   color: forestgreen;

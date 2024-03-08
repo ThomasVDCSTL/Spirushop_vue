@@ -24,6 +24,11 @@ import {ref} from "vue";
 <style scoped>
 img{
   height : 150px;
+  transition: height .5s, transform .5s ease-out;
+}
+img:hover{
+  height: 200px;
+  transform: rotate(360deg);
 }
 ul{
   width: 100%;
@@ -45,6 +50,7 @@ button {
   border : none;
   background: none;
   transition: background-color 0.2s ease, font-size .2s ease ;
+  cursor: pointer;
 }
 li{
   width: 33.3%;

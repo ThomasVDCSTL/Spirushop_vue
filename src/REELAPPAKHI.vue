@@ -40,6 +40,7 @@ h1 {
   margin-top: 50px;
   background-size: contain;
   transition: font-size .3s ease;
+  cursor: none;
 }
 h1:hover{
   font-size: 70px;
